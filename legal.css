@@ -1,0 +1,297 @@
+/* ============================================================
+   WAM LEGAL — long-form pages (oferta, subprocessors)
+   Ported from design/proposals/legal.css on 2026-04-21.
+   Hero with sticky TOC on desktop, narrow reading column.
+   Depends on tokens from styles.css: --shell-pad, --grotesk,
+   --mono, --fg, --dim, --body-sub, --accent, --hair, --hair-2,
+   --elev.
+   ============================================================ */
+
+.legal-page {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 0 var(--shell-pad) 24px;
+}
+
+/* ---------- HERO ---------- */
+.lg-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin: 0 calc(var(--shell-pad) * -1) 0;
+  border-radius: var(--radius-lg);
+  padding: 80px 80px 72px;
+}
+.lg-hero > div { max-width: 900px; position: relative; z-index: 2; }
+/* Legal hero kicker/title/lede: typography from .wam-kicker /
+   .wam-hero-title / .wam-hero-lede */
+.lg-hero__kicker {
+  margin-bottom: 20px;
+}
+.lg-hero__title {
+  margin: 0 0 24px;
+}
+.lg-hero__lede {
+  margin: 0 0 24px;
+}
+.lg-hero__meta {
+  font-family: var(--grotesk);
+  font-size: 13px;
+  color: var(--dim);
+  letter-spacing: -0.005em;
+  line-height: 1.7;
+}
+.lg-hero__meta b { color: var(--fg); font-weight: 500; }
+.lg-hero__meta code {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg);
+}
+
+/* ---------- TOC (lives in aside on desktop) ---------- */
+.lg-toc {
+  font-family: var(--grotesk);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.lg-toc::-webkit-scrollbar { width: 4px; }
+.lg-toc::-webkit-scrollbar-thumb { background: var(--hair-2); border-radius: 2px; }
+.lg-toc-h {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.lg-toc-group {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 14px 0 6px;
+  padding: 0;
+}
+.lg-toc-group:first-of-type { margin-top: 0; }
+.lg-toc a {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--hair);
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 12.5px;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+.lg-toc a:hover { color: var(--accent); }
+.lg-toc .num {
+  font-variant-numeric: tabular-nums;
+  font-size: 10.5px;
+  color: var(--dim);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- BODY ---------- */
+.lg-body {
+  margin: 0 calc(var(--shell-pad) * -1);
+  padding: 64px 80px 64px;
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 720px) 1fr;
+  gap: 80px;
+}
+.lg-body__content {
+  font-family: var(--grotesk);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--body-sub);
+  letter-spacing: -0.005em;
+  min-width: 0;
+}
+
+/* Long-form typography */
+.lg-body__content h1 {
+  /* H1 from MD is the doc title — suppressed; hero carries it */
+  display: none;
+}
+.lg-body__content h2 {
+  font-family: var(--grotesk);
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 72px 0 28px;
+  scroll-margin-top: 24px;
+}
+.lg-body__content h2:first-child { margin-top: 0; }
+.lg-body__content h3 {
+  font-family: var(--grotesk);
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 44px 0 18px;
+  scroll-margin-top: 24px;
+}
+.lg-body__content p {
+  margin: 0 0 16px;
+}
+.lg-body__content p b,
+.lg-body__content li b,
+.lg-body__content p strong,
+.lg-body__content li strong { color: var(--fg); font-weight: 500; }
+.lg-body__content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+}
+.lg-body__content a:hover { border-bottom-color: var(--accent); }
+.lg-body__content code {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  background: color-mix(in oklab, var(--fg) 8%, transparent);
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: var(--fg);
+}
+.lg-body__content ul,
+.lg-body__content ol {
+  margin: 0 0 18px;
+  padding-left: 20px;
+}
+.lg-body__content li { margin-bottom: 10px; }
+.lg-body__content blockquote {
+  margin: 24px 0;
+  padding: 14px 20px;
+  border-left: 2px solid var(--accent);
+  background: color-mix(in oklab, var(--accent) 6%, transparent);
+  border-radius: 0 8px 8px 0;
+  color: var(--fg);
+  font-style: normal;
+}
+.lg-body__content blockquote p { margin: 0; }
+.lg-body__content hr { display: none; }
+
+/* Tables (for subprocessors + reference lists) */
+.lg-body__content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 28px;
+  font-size: 13.5px;
+}
+.lg-body__content th,
+.lg-body__content td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--hair-2);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.lg-body__content th {
+  font-weight: 500;
+  color: var(--fg);
+  background: color-mix(in oklab, var(--fg) 5%, transparent);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lg-body__content td { color: var(--body-sub); }
+.lg-body__content tr:last-child td { border-bottom: 0; }
+
+/* Right side column — hosts the TOC */
+.lg-body__aside {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  font-family: var(--grotesk);
+  font-size: 12px;
+  color: var(--dim);
+  letter-spacing: -0.005em;
+  line-height: 1.6;
+  padding-top: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.lg-body__aside::-webkit-scrollbar { display: none; }
+
+/* Surfaces via shared --elev token; see styles.css :root for values. */
+.lg-hero,
+.lg-body { background: var(--elev); }
+
+/* Hero blob + grain */
+.lg-hero::before {
+  content: "";
+  position: absolute;
+  inset: -30% -20% auto auto;
+  width: 80%; height: 180%;
+  background:
+    radial-gradient(closest-side at 60% 40%, color-mix(in oklch, var(--accent) 55%, transparent), transparent 70%),
+    radial-gradient(closest-side at 40% 60%, color-mix(in oklch, var(--accent) 35%, transparent), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+}
+[data-theme="light"] .lg-hero::before { opacity: 0.35; }
+.lg-hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  z-index: 1;
+  pointer-events: none;
+}
+[data-theme="light"] .lg-hero::after { opacity: 0.12; mix-blend-mode: multiply; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 960px) {
+  .lg-hero {
+    padding: 48px 36px 40px;
+    border-radius: var(--radius-md);
+  }
+  .lg-hero__title {
+    font-size: 38px;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .lg-hero__lede { font-size: 17px; }
+  .lg-body {
+    grid-template-columns: 1fr;
+    padding: 40px 36px;
+    gap: 40px;
+    border-radius: var(--radius-md);
+  }
+  .lg-body__content { font-size: 15px; }
+  .lg-body__content h2 { font-size: 28px; margin-top: 48px; }
+  .lg-body__content h3 { font-size: 19px; margin-top: 32px; }
+  .lg-body__aside {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+  /* Oferta mobile: hide TOC entirely (too long to be useful inline) */
+  [data-page="oferta"] .lg-body__aside { display: none; }
+  [data-page="oferta"] .lg-body { gap: 0; }
+  /* Tables scroll horizontally on narrow screens */
+  .lg-body__content table { display: block; overflow-x: auto; white-space: nowrap; }
+  .lg-body__content td,
+  .lg-body__content th { white-space: normal; }
+}
