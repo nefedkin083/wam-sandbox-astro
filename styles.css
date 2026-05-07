@@ -2415,3 +2415,10 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 .ed__pill--fixed b { color: var(--tag-fix); }
 .ed__pill--changed { border-color: var(--tag-chg); color: var(--tag-chg); }
 .ed__pill--changed b { color: var(--tag-chg); }
+
+/* intro-block — text under hero photo */
+.intro-block{max-width:var(--shell-max);margin:0 auto;padding:clamp(56px,8vw,112px) var(--shell-pad);font-family:var(--sans);color:var(--fg)}
+.intro-block__inner{max-width:780px}
+.intro-block__p{font-size:var(--fs-sub);line-height:1.5;color:var(--body-sub);margin:0 0 1.75rem}
+.intro-block__list{list-style:none;padding:0;margin:0 0 2rem;display:grid;gap:0.6rem;font-size:1.0625rem;line-height:1.55;color:var(--body-sub)}
+.intro-block__tagline{margin:0;font-family:var(--grotesk);font-size:clamp(20px,2.2vw,26px);font-weight:600;color:var(--fg);letter-spacing:-0.01em}
