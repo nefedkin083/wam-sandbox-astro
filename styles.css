@@ -2417,7 +2417,7 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 .ed__pill--changed b { color: var(--tag-chg); }
 
 /* ---- Intro: 3-column typographic row between cover-hero and manifesto ----
-   Each column marked with accent dot (same vocabulary as .wam-kicker). */
+   Lead phrase styled as a small section heading; body in dim. */
 .intro { padding: 32px 0 40px; }
 .intro__list {
   list-style: none;
@@ -2430,28 +2430,29 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 .intro__list li {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
-.intro__list li i {
-  width: 8px; height: 8px;
-  border-radius: var(--radius-pill);
-  background: var(--accent);
-  display: inline-block;
-}
-.intro__list li span {
+.intro__lead {
   font-family: var(--grotesk);
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: clamp(20px, 1.9vw, 24px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
+  text-wrap: balance;
+}
+.intro__body {
+  font-family: var(--grotesk);
+  font-size: 15px;
+  line-height: 1.5;
   letter-spacing: -0.005em;
   color: var(--body-sub);
+  margin: 0;
   text-wrap: pretty;
-}
-.intro__list li span b {
-  color: var(--fg);
-  font-weight: 600;
 }
 
 @media (max-width: 760px) {
   .intro__list { grid-template-columns: 1fr; gap: 28px; }
-  .intro__list li span { font-size: 17px; }
+  .intro__lead { font-size: 20px; }
 }
