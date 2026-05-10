@@ -162,8 +162,8 @@ body { padding-top: var(--nav-h); }
 .nav__langs .nav__lang:hover { border-color: transparent; border-right-color: var(--hair-2); background: var(--hair); color: var(--fg); }
 .nav__langs .nav__lang:last-child:hover { border-right-color: transparent; }
 .nav__langs .nav__lang--active {
-  background: var(--accent);
-  color: #fff;
+  background: transparent;
+  color: var(--accent);
   cursor: default;
   pointer-events: none;
 }
