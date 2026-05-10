@@ -128,18 +128,12 @@ body { padding-top: var(--nav-h); }
   border-radius: 8px;
   background: none;
   color: var(--dim);
-  font-family: var(--grotesk); font-size: 14px; font-weight: 500;
+  font-family: var(--grotesk); font-size: 12px; font-weight: 500;
   letter-spacing: 0;
   text-decoration: none;
   cursor: pointer;
   transition: color .15s, background .15s;
 }
-.nav__theme-icon { width: 18px; height: 18px; }
-.nav__burger-bars { width: 20px; height: 14px; }
-.nav__burger-bars span { height: 2px; }
-.nav__burger-bars span:nth-child(2) { top: 6px; }
-.nav__burger-bars span:nth-child(3) { top: 12px; }
-.nav__burger[aria-expanded="true"] .nav__burger-bars span:nth-child(1) { top: 6px; }
 .nav__theme:hover,
 .nav__lang:hover { color: var(--fg); }
 
@@ -158,7 +152,7 @@ body { padding-top: var(--nav-h); }
   border-radius: 0;
   padding: 0 8px;
   min-width: 32px;
-  font-size: 14px;
+  font-size: 12px;
   background: transparent;
   color: var(--dim);
 }
