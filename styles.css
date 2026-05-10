@@ -130,6 +130,37 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
 .nav__theme:hover,
 .nav__lang:hover { color: var(--fg); border-color: var(--hair); }
 
+/* Language group — single bordered pill with three cells, current marked */
+.nav__langs {
+  display: inline-flex;
+  align-items: stretch;
+  height: 36px;
+  border: 1px solid var(--hair-2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: none;
+}
+.nav__langs .nav__lang {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid var(--hair-2);
+  padding: 0 10px;
+  min-width: 36px;
+  font-size: 12px;
+  background: transparent;
+  color: var(--dim);
+}
+.nav__langs .nav__lang:last-child { border-right: none; }
+.nav__langs .nav__lang:hover { border-color: transparent; border-right-color: var(--hair-2); background: var(--hair); color: var(--fg); }
+.nav__langs .nav__lang:last-child:hover { border-right-color: transparent; }
+.nav__langs .nav__lang--active {
+  background: var(--accent);
+  color: #fff;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Theme icon swaps with the current theme (data-theme on <body>): sun in
    light mode, moon in dark mode. Reflects state — tap to flip. */
 .nav__theme-icon { display: none; }
