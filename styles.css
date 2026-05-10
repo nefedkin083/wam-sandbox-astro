@@ -2156,11 +2156,11 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   gap: 20px;
 }
 .cover-hero__agents-icon {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   display: block;
-  margin-bottom: 4px;
-  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.35));
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
 }
 .cover-hero__sub {
   font-family: var(--grotesk);
@@ -2176,7 +2176,8 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 .cover-hero__ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
   margin-top: 8px;
 }
 .cover-hero__cta {
@@ -2215,7 +2216,7 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 @media (max-width: 960px) {
   .cover-hero { min-height: clamp(480px, 64vh, 680px); }
   .cover-hero__content { padding: 0 36px 56px; gap: 18px; }
-  .cover-hero__agents-icon { width: 52px; height: 52px; }
+  .cover-hero__agents-icon { width: 44px; height: 44px; }
   .cover-hero__sub { font-size: clamp(17px, 4vw, 22px); }
   .cover-hero__overlay {
     background:
@@ -2227,7 +2228,7 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 @media (max-width: 600px) {
   .cover-hero { min-height: 460px; }
   .cover-hero__content { padding: 0 24px 44px; }
-  .cover-hero__agents-icon { width: 44px; height: 44px; }
+  .cover-hero__agents-icon { width: 38px; height: 38px; }
   .cover-hero__cta { padding: 13px 20px; font-size: 15px; }
   .cover-hero__overlay {
     background:
@@ -2459,9 +2460,9 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 .ed__pill--changed { border-color: var(--tag-chg); color: var(--tag-chg); }
 .ed__pill--changed b { color: var(--tag-chg); }
 
-/* ---- Intro: 3-column row between cover-hero and manifesto ----
-   Each column carries an editorial accent rule + dot — visual interest
-   without panels/letters. */
+/* ---- Intro: 3-column hairline-card row between cover-hero and manifesto
+   Subtle bordered cards, no fill — gives each block a discrete container
+   without going back to heavy panels. Accent glows on hover. */
 .intro { padding: 40px 0 56px; }
 .intro__list {
   list-style: none;
@@ -2469,34 +2470,32 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  gap: 16px;
 }
 .intro__list li {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding-top: 28px;
+  padding: 28px 24px 30px;
+  border: 1px solid var(--hair-2);
+  border-radius: 22px;
+  background: transparent;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
 }
 .intro__list li::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 44px;
+  top: 28px;
+  left: 24px;
+  width: 36px;
   height: 2px;
   background: var(--accent);
   border-radius: 1px;
 }
-.intro__list li::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: 50px;
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-pill);
-  background: var(--accent);
+.intro__list li:hover {
+  border-color: color-mix(in oklch, var(--accent) 50%, var(--hair-2));
+  background: color-mix(in oklch, var(--accent) 6%, transparent);
 }
 .intro__lead {
   font-family: var(--grotesk);
@@ -2506,6 +2505,7 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   font-weight: 600;
   color: var(--fg);
   margin: 0;
+  padding-top: 16px;
   text-wrap: balance;
 }
 .intro__body {
@@ -2516,10 +2516,10 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   color: var(--body-sub);
   margin: 0;
   text-wrap: pretty;
-  max-width: 32ch;
 }
 
 @media (max-width: 760px) {
-  .intro__list { grid-template-columns: 1fr; gap: 32px; }
+  .intro__list { grid-template-columns: 1fr; gap: 12px; }
+  .intro__list li { padding: 24px 22px 26px; }
   .intro__lead { font-size: 22px; }
 }
