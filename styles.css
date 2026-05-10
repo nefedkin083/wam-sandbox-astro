@@ -73,6 +73,16 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   font-family: var(--grotesk); font-size: 13px; letter-spacing: -0.01em;
   color: var(--fg); font-weight: 500;
 }
+.brand__logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  max-width: 120px;
+}
+[data-theme="light"] .brand__logo { filter: invert(1); }
+@media (max-width: 600px) {
+  .brand__logo { height: 18px; max-width: 100px; }
+}
 .nav__links {
   display: flex; gap: 2px;
   justify-self: center;
@@ -2136,18 +2146,6 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
     linear-gradient(to right, rgba(11, 11, 13, 0.55) 0%, rgba(11, 11, 13, 0.0) 60%);
   z-index: 1;
 }
-.cover-hero__brand-mark {
-  position: absolute;
-  top: 28px;
-  left: 36px;
-  z-index: 3;
-  max-width: 230px;
-  width: 38vw;
-  min-width: 140px;
-  max-height: 64px;
-  height: auto;
-  display: block;
-}
 .cover-hero__content {
   position: relative;
   z-index: 2;
@@ -2217,7 +2215,6 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 @media (max-width: 960px) {
   .cover-hero { min-height: clamp(480px, 64vh, 680px); }
   .cover-hero__content { padding: 0 36px 56px; gap: 18px; }
-  .cover-hero__brand-mark { top: 20px; left: 24px; max-width: 180px; max-height: 52px; }
   .cover-hero__agents-icon { width: 52px; height: 52px; }
   .cover-hero__sub { font-size: clamp(17px, 4vw, 22px); }
   .cover-hero__overlay {
@@ -2230,7 +2227,6 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 @media (max-width: 600px) {
   .cover-hero { min-height: 460px; }
   .cover-hero__content { padding: 0 24px 44px; }
-  .cover-hero__brand-mark { top: 16px; left: 20px; max-width: 150px; max-height: 44px; }
   .cover-hero__agents-icon { width: 44px; height: 44px; }
   .cover-hero__cta { padding: 13px 20px; font-size: 15px; }
   .cover-hero__overlay {
