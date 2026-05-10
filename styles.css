@@ -124,7 +124,7 @@ body { padding-top: var(--nav-h); }
   min-width: 36px;
   display: inline-flex; align-items: center; justify-content: center;
   padding: 0 10px;
-  border: 1px solid var(--hair-2);
+  border: none;
   border-radius: 8px;
   background: none;
   color: var(--dim);
@@ -132,19 +132,18 @@ body { padding-top: var(--nav-h); }
   letter-spacing: 0;
   text-decoration: none;
   cursor: pointer;
-  transition: color .15s, border-color .15s, background .15s;
+  transition: color .15s, background .15s;
 }
 .nav__theme:hover,
-.nav__lang:hover { color: var(--fg); border-color: var(--hair); }
+.nav__lang:hover { color: var(--fg); }
 
 /* Language group — single bordered pill with three cells, current marked */
 .nav__langs {
   display: inline-flex;
   align-items: stretch;
   height: 36px;
-  border: 1px solid var(--hair-2);
-  border-radius: 8px;
-  overflow: hidden;
+  border: none;
+  border-radius: 0;
   background: none;
 }
 .nav__langs .nav__lang {
@@ -176,13 +175,14 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   display: none;
   width: 36px; height: 36px;
   align-items: center; justify-content: center;
-  border: 1px solid var(--hair-2);
+  border: none;
   border-radius: 8px;
+  background: none;
   color: var(--fg);
   cursor: pointer;
-  transition: border-color .15s;
+  transition: opacity .15s;
 }
-.nav__burger:hover { border-color: var(--fg); }
+.nav__burger:hover { opacity: 0.7; }
 .nav__burger-bars {
   position: relative;
   width: 16px; height: 12px;
