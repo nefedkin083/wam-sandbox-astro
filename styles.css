@@ -40,14 +40,21 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
 ::selection { background: var(--accent); color: var(--bg); }
 
 /* ---------- Shared nav ---------- */
+:root { --nav-h: 64px; }
+@media (max-width: 600px) { :root { --nav-h: 54px; } }
+
+body { padding-top: var(--nav-h); }
+.cover-hero { margin-top: calc(var(--nav-h) * -1); }
+
 .nav {
-  position: sticky; top: 0; z-index: 40;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 40;
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
   transition: background .15s ease, border-color .15s ease, backdrop-filter .15s ease, transform .2s ease-out;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 .nav.is-scrolled {
   background: var(--nav-bg);
@@ -56,7 +63,7 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   border-bottom-color: var(--hair);
 }
 .nav.nav--hidden {
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
 }
 .nav__inner {
   max-width: var(--shell-max); margin: 0 auto;
