@@ -46,7 +46,7 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
-  transition: background .2s ease, border-color .2s ease, backdrop-filter .2s ease, transform .3s cubic-bezier(.2,.7,.3,1);
+  transition: background .15s ease, border-color .15s ease, backdrop-filter .15s ease, transform .2s ease-out;
   will-change: transform;
 }
 .nav.is-scrolled {
@@ -66,17 +66,7 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   align-items: center;
   gap: 24px;
 }
-.brand { display: flex; align-items: center; gap: 12px; justify-self: start; }
-.brand__marks { display: flex; align-items: center; gap: 10px; }
-.brand__sep { width: 1px; height: 18px; background: var(--hair-2); }
-.brand__mark img { display: block; height: 24px; width: auto; filter: none; }
-[data-theme="light"] .brand__mark img { filter: invert(1); }
-.brand__mark--agents img { height: 22px; }
-.brand__mark--wam img { height: 20px; }
-.brand__label {
-  font-family: var(--grotesk); font-size: 13px; letter-spacing: -0.01em;
-  color: var(--fg); font-weight: 500;
-}
+.brand { display: flex; align-items: center; justify-self: start; }
 .brand__logo {
   display: block;
   height: 32px;
@@ -2129,21 +2119,19 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   object-fit: cover;
   object-position: center 20%;
 }
-/* Three-slide crossfade: each photo holds ~5s, ~1s fade, total cycle 18s */
+/* Seven-slide crossfade: each photo holds ~4s, ~1s fade, total cycle 35s */
 @keyframes cover-crossfade {
-  0%, 27.78%  { opacity: 1; }
-  33.33%, 94.44% { opacity: 0; }
+  0%, 11.43%  { opacity: 1; }
+  14.29%, 97.14% { opacity: 0; }
   100%        { opacity: 1; }
 }
-.cover-hero__slide--1 {
-  animation: cover-crossfade 18s ease-in-out infinite;
-}
-.cover-hero__slide--2 {
-  animation: cover-crossfade 18s -6s ease-in-out infinite;
-}
-.cover-hero__slide--3 {
-  animation: cover-crossfade 18s -12s ease-in-out infinite;
-}
+.cover-hero__slide--1 { animation: cover-crossfade 35s ease-in-out infinite; }
+.cover-hero__slide--2 { animation: cover-crossfade 35s -5s ease-in-out infinite; }
+.cover-hero__slide--3 { animation: cover-crossfade 35s -10s ease-in-out infinite; object-position: center 35%; }
+.cover-hero__slide--4 { animation: cover-crossfade 35s -15s ease-in-out infinite; object-position: center 30%; }
+.cover-hero__slide--5 { animation: cover-crossfade 35s -20s ease-in-out infinite; object-position: center 30%; }
+.cover-hero__slide--6 { animation: cover-crossfade 35s -25s ease-in-out infinite; object-position: center 30%; }
+.cover-hero__slide--7 { animation: cover-crossfade 35s -30s ease-in-out infinite; object-position: center 35%; }
 .cover-hero__overlay {
   position: absolute;
   inset: 0;
@@ -2418,6 +2406,10 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   .manifesto__hero::before { animation: none !important; }
+  .cover-hero__slide { animation: none !important; opacity: 0 !important; }
+  .cover-hero__slide--1 { opacity: 1 !important; }
+  .nav { transition: background .15s ease, border-color .15s ease, backdrop-filter .15s ease !important; }
+  .nav.nav--hidden { transform: none !important; }
 }
 
 @media (max-width: 960px) {
