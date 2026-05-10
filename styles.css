@@ -2489,16 +2489,6 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   background: transparent;
   transition: border-color .2s ease, background .2s ease, transform .2s ease;
 }
-.intro__list li::before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  left: 24px;
-  width: 36px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 1px;
-}
 .intro__list li:hover {
   border-color: color-mix(in oklch, var(--accent) 50%, var(--hair-2));
   background: color-mix(in oklch, var(--accent) 6%, transparent);
@@ -2511,7 +2501,6 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   font-weight: 600;
   color: var(--fg);
   margin: 0;
-  padding-top: 16px;
   text-wrap: balance;
 }
 .intro__body {
