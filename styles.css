@@ -151,16 +151,13 @@ body { padding-top: var(--nav-h); }
   height: 100%;
   border: none;
   border-radius: 0;
-  border-right: 1px solid var(--hair-2);
   padding: 0 10px;
   min-width: 36px;
   font-size: 12px;
   background: transparent;
   color: var(--dim);
 }
-.nav__langs .nav__lang:last-child { border-right: none; }
-.nav__langs .nav__lang:hover { border-color: transparent; border-right-color: var(--hair-2); background: var(--hair); color: var(--fg); }
-.nav__langs .nav__lang:last-child:hover { border-right-color: transparent; }
+.nav__langs .nav__lang:hover { background: transparent; color: var(--fg); }
 .nav__langs .nav__lang--active {
   background: transparent;
   color: var(--accent);
