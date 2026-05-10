@@ -2154,19 +2154,15 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   object-fit: cover;
   object-position: center 20%;
 }
-/* Seven-slide crossfade: each photo holds ~4s, ~1s fade, total cycle 35s */
+/* Three-slide crossfade: each photo holds ~4s, ~1s fade, total cycle 15s */
 @keyframes cover-crossfade {
-  0%, 11.43%  { opacity: 1; }
-  14.29%, 97.14% { opacity: 0; }
+  0%, 26.67%  { opacity: 1; }
+  33.33%, 93.33% { opacity: 0; }
   100%        { opacity: 1; }
 }
-.cover-hero__slide--1 { animation: cover-crossfade 35s ease-in-out infinite; }
-.cover-hero__slide--2 { animation: cover-crossfade 35s -5s ease-in-out infinite; }
-.cover-hero__slide--3 { animation: cover-crossfade 35s -10s ease-in-out infinite; object-position: center 35%; }
-.cover-hero__slide--4 { animation: cover-crossfade 35s -15s ease-in-out infinite; object-position: center 30%; }
-.cover-hero__slide--5 { animation: cover-crossfade 35s -20s ease-in-out infinite; object-position: center 30%; }
-.cover-hero__slide--6 { animation: cover-crossfade 35s -25s ease-in-out infinite; object-position: center 30%; }
-.cover-hero__slide--7 { animation: cover-crossfade 35s -30s ease-in-out infinite; object-position: center 35%; }
+.cover-hero__slide--1 { animation: cover-crossfade 15s ease-in-out infinite; object-position: center 40%; }
+.cover-hero__slide--2 { animation: cover-crossfade 15s -5s ease-in-out infinite; object-position: center 25%; }
+.cover-hero__slide--3 { animation: cover-crossfade 15s -10s ease-in-out infinite; object-position: center 30%; }
 .cover-hero__overlay {
   position: absolute;
   inset: 0;
