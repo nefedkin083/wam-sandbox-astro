@@ -75,13 +75,13 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
 }
 .brand__logo {
   display: block;
-  height: 22px;
+  height: 32px;
   width: auto;
-  max-width: 120px;
+  max-width: 180px;
 }
 [data-theme="light"] .brand__logo { filter: invert(1); }
 @media (max-width: 600px) {
-  .brand__logo { height: 18px; max-width: 100px; }
+  .brand__logo { height: 24px; max-width: 130px; }
 }
 .nav__links {
   display: flex; gap: 2px;
@@ -2155,12 +2155,11 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   flex-direction: column;
   gap: 20px;
 }
-.cover-hero__agents-icon {
-  width: 48px;
-  height: 48px;
-  display: block;
+.cover-hero__cta-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
   flex-shrink: 0;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
 }
 .cover-hero__sub {
   font-family: var(--grotesk);
@@ -2216,7 +2215,7 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 @media (max-width: 960px) {
   .cover-hero { min-height: clamp(480px, 64vh, 680px); }
   .cover-hero__content { padding: 0 36px 56px; gap: 18px; }
-  .cover-hero__agents-icon { width: 44px; height: 44px; }
+  .cover-hero__cta-icon { width: 20px; height: 20px; }
   .cover-hero__sub { font-size: clamp(17px, 4vw, 22px); }
   .cover-hero__overlay {
     background:
@@ -2228,7 +2227,7 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
 @media (max-width: 600px) {
   .cover-hero { min-height: 460px; }
   .cover-hero__content { padding: 0 24px 44px; }
-  .cover-hero__agents-icon { width: 38px; height: 38px; }
+  .cover-hero__cta-icon { width: 18px; height: 18px; }
   .cover-hero__cta { padding: 13px 20px; font-size: 15px; }
   .cover-hero__overlay {
     background:
