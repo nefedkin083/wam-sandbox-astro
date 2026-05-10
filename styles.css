@@ -2138,10 +2138,6 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   overflow: hidden;
   isolation: isolate;
   min-height: clamp(560px, 72vh, 820px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
 }
 .cover-hero__slides {
   position: absolute;
@@ -2176,7 +2172,10 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   z-index: 1;
 }
 .cover-hero__content {
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
   padding: 0 64px 72px;
   max-width: 760px;
