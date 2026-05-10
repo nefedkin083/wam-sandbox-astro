@@ -2154,15 +2154,16 @@ body[data-theme="light"] .nav__theme-icon--sun { display: block; }
   object-fit: cover;
   object-position: center 20%;
 }
-/* Three-slide crossfade: each photo holds ~4s, ~1s fade, total cycle 15s */
+/* Four-slide crossfade: each photo holds ~4s, ~1s fade, total cycle 20s */
 @keyframes cover-crossfade {
-  0%, 26.67%  { opacity: 1; }
-  33.33%, 93.33% { opacity: 0; }
-  100%        { opacity: 1; }
+  0%, 20%  { opacity: 1; }
+  25%, 95% { opacity: 0; }
+  100%     { opacity: 1; }
 }
-.cover-hero__slide--1 { animation: cover-crossfade 15s ease-in-out infinite; object-position: center 40%; }
-.cover-hero__slide--2 { animation: cover-crossfade 15s -5s ease-in-out infinite; object-position: center 25%; }
-.cover-hero__slide--3 { animation: cover-crossfade 15s -10s ease-in-out infinite; object-position: center 30%; }
+.cover-hero__slide--1 { animation: cover-crossfade 20s ease-in-out infinite; object-position: center 35%; }
+.cover-hero__slide--2 { animation: cover-crossfade 20s -5s ease-in-out infinite; object-position: center 25%; }
+.cover-hero__slide--3 { animation: cover-crossfade 20s -10s ease-in-out infinite; object-position: center 50%; }
+.cover-hero__slide--4 { animation: cover-crossfade 20s -15s ease-in-out infinite; object-position: center 30%; }
 .cover-hero__overlay {
   position: absolute;
   inset: 0;
