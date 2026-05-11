@@ -57,10 +57,10 @@ body { padding-top: var(--nav-h); }
   transform: translate3d(0, 0, 0);
 }
 .nav.is-scrolled {
-  background: var(--nav-bg);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border-bottom-color: var(--hair);
+  background: transparent;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: transparent;
 }
 .nav.nav--hidden {
   transform: translate3d(0, -100%, 0);
